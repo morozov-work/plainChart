@@ -10,12 +10,12 @@ export default function renderChartWrapper(parent) {
     }
 
     const plainChart = addDiv(parent, 'plainChart');
-    const chartWrapper = addDiv(plainChart, 'chartWrapper');
-    const chartSettings = addDiv(plainChart, 'chartSettings');
-    const icon = addDiv(plainChart, 'chartSettings-icon');
+    const chartWrapper = addDiv(plainChart, 'chart-wrapper');
+    const chartSettings = addDiv(plainChart, 'chart-settings');
+    const icon = addDiv(plainChart, 'chart-settings__icon');
 
     icon.addEventListener('click', () => {
-        chartSettings.classList.toggle('hide');
+        chartSettings.classList.toggle('chart-elem_hidden');
     });
 
     settingsIcon(icon);

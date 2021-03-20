@@ -11,7 +11,7 @@ export default class PieChart {
         this.values = values;
         this.labels = labels;
         this.colors = settings.colors.innerHTML.split(';');
-        this.wrapper = document.querySelector('.chartWrapper');
+        this.wrapper = document.querySelector('.chart-wrapper');
 
         const {currentRadius = 100, currentDonut = 50} = settings;
 
@@ -159,7 +159,10 @@ export default class PieChart {
         this.radiusInput.addEventListener('input', updateChart);
         this.donutInput.addEventListener('input', updateChart);
         
-        this.legendCheckbox.addEventListener('click', () => document.querySelector('.legend').classList.toggle('hide'));
+        this.legendCheckbox.addEventListener('click', () => {
+            document.querySelector('.pieChart__legend')
+            .classList.toggle('chart-elem_hidden');
+        });
 
         updateChart();      
         

@@ -13,7 +13,6 @@
     </style>
 </head>
 <body>
-    <button class="save">Save</button>
     <div class="chartParent"></div>
     <script src="./dist/plainChart.js"></script>
     <!-- <script src="demo.js" type="module"></script> -->
@@ -28,6 +27,9 @@
                 settings: {}
             }
         );
+
+        const data = chart.getData();
+        console.log(data);
     </script>
 </body>
 </html>

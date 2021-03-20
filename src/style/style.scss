@@ -1,0 +1,224 @@
+$shadow: 0px 0px 4px 0px rgba(34, 60, 80, 0.2);
+$shadow-inset: 0px 0px 4px 0px rgba(34, 60, 80, 0.2) inset;
+$button-color: rgba(255, 255, 255, 0.2);
+$button-color-hover: rgba(34, 60, 80, 0.2);
+$button-color-clicked: rgba(39, 55, 68, 0.2);
+
+@mixin font() {
+    font-size: 16px;
+    font-style: normal;
+    font-family: Courier;
+}
+
+
+
+
+.input-fields {
+    box-shadow: $shadow;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 10px;
+    min-width: 400px;
+
+    &__input {
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        resize: none;
+        outline: none;
+        @include font();
+        box-shadow: $shadow;
+        padding: 5px;
+    
+        &-name {
+        font-weight: bold;
+        }
+    
+        &-values, 
+        &-labels { 
+            font-weight: normal;
+        }
+    
+        &-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__create-button {
+        box-shadow: $shadow;
+        border: none;
+        outline: none;
+        display: block;
+        flex-grow: 1;
+        border-radius: 5px;
+        padding: 2em 0;
+        transition: .5s;
+        @include font();
+        font-weight: bold;
+    }
+
+    &__barChart-button {
+        margin-right: 10px;
+    }
+
+}
+
+
+
+
+.plainChart {
+    position: relative;
+    display: inline-block;
+
+    &__options {
+        cursor: pointer;
+        user-select: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+
+        &::-webkit-slider-runnable-track {
+            height: 1px;
+            background-color: black;
+        }
+
+        &::-webkit-slider-thumb {
+            background: rgb(29, 141, 170 );
+            border-radius: 50%;
+            cursor: pointer;
+            width:12px;
+            height: 12px;
+            margin-top: -6px;
+            -webkit-appearance: none;
+        }
+
+        &::-moz-range-track {
+            height: 1px;
+            background-color: black;
+        }
+
+        &::-moz-range-thumb {
+            background: rgb(29, 141, 170 );
+            border-radius: 50%;
+            cursor: pointer;
+            width:12px;
+            height: 12px;
+            margin-top: -6px;
+            -moz-appearance: none;
+        }
+    }
+
+    &__edit-button {
+        font-size: 16px;
+        font-style: normal;
+        font-family: Courier;
+        outline: none;
+        border: none;
+        user-select: none;
+        cursor: pointer;
+        box-shadow: $shadow;
+        margin: 10px;
+        padding: 0;
+    
+        & p {
+            margin: 10px;
+        }
+    }
+
+    &__edit-button:hover {
+        background-color: $button-color-hover;
+        transition: .1s;
+    }
+
+    &__button {
+        background-color: $button-color;
+        transition: .1s;
+    
+        &:hover {
+            background-color: $button-color-hover;
+            transition: .1s;
+        }
+    }
+    
+    &__button_clicked {
+        background-color:$button-color-clicked;
+        box-shadow: $shadow-inset;
+        transition: none;
+        font-size: 15.9px;
+        padding-left: .4px;
+        padding-right: .4px;
+    }
+}
+
+
+
+
+.chart-settings {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    background: rgba( 255, 255, 255, 0.20 );
+    box-shadow: $shadow;
+    backdrop-filter: blur( 7.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 1em;
+
+    &__icon {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+
+.pieChart {
+    &__legend-checkbox {
+        appearance: auto;
+        -moz-appearance: auto;
+        -webkit-appearance: auto;
+    }
+
+    &__legend {
+        display: flex; 
+        justify-content: flex-start; 
+        flex-wrap: wrap;
+
+        &__wrap {
+            display: flex; 
+            justify-content: between; 
+            align-items: center; 
+            margin: 0 10px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        &__colorBlock {
+            width: 12px; 
+            height: 12px; 
+            margin: 5px;
+        }
+
+        &__titleBlock {
+            @include font();
+            color: black;  
+            user-select: none
+        }
+    }
+}
+
+
+
+
+.chart-elem_hidden {
+    display: none !important;
+}
