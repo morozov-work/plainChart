@@ -3,8 +3,8 @@ const plainChart = window.plainChart;
 const chartParent = document.querySelector('.chartParent');
 
 
-                plainChart.init(
-            chartParent, 
+    plainChart.init(
+        chartParent, 
             {
                 type: 'barChart', 
                 values: '46, 5, 20, 33, 15, 54, 23', 
