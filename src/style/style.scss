@@ -160,8 +160,8 @@ $button-color-clicked: rgba(39, 55, 68, 0.2);
 
 
 .chart-settings {
-    position: fixed;
-    top: 50px;
+    position: absolute;
+    top: 0px;
     left: 50px;
     background: rgba( 255, 255, 255, 0.20 );
     box-shadow: $shadow;

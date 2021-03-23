@@ -14,6 +14,8 @@ export default function renderChartWrapper(parent) {
     const chartSettings = addDiv(plainChart, 'chart-settings');
     const icon = addDiv(plainChart, 'chart-settings__icon');
 
+
+    chartSettings.classList.add('chart-elem_hidden');
     icon.addEventListener('click', () => {
         chartSettings.classList.toggle('chart-elem_hidden');
     });
